@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Controller showing product page
+POST          /product/                controllers.ProductController.post(request: Request)
+GET           /product/                controllers.ProductController.get
+GET           /product/:id             controllers.ProductController.getOne(id: String)
+PUT           /product/                controllers.ProductController.post(request: Request)
+DELETE        /product/:id             controllers.ProductController.delete(id: String)
+
+# Controller showing cart page
+POST          /cart/                   controllers.CartController.post(request: Request)
+GET           /cart/:userId            controllers.CartController.get(userId: String)
+PUT           /cart/:userId/:id        controllers.CartController.put(userId: String, id: String)
+DELETE        /cart/:userId/:id        controllers.CartController.delete(userId: String, id: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET           /assets/*file            controllers.Assets.versioned(path="/public", file: Asset)
